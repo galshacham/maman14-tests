@@ -12,8 +12,8 @@ public class IntListTwoTests {
 
         Assert.assertEquals(3, lst._tail.getNum());
         Assert.assertEquals(1, lst._head.getNum());
-        Assert.assertEquals(2, lst._head.getNext().getNum());
-        Assert.assertEquals(2, lst._tail.getPrev().getNum());
+        Assert.assertEquals(2, lst._head.getPrev().getNum());
+        Assert.assertEquals(2, lst._tail.getNext().getNum());
 
         lst.addToEnd(4);
         Assert.assertEquals(4, lst._tail.getNum());
@@ -250,4 +250,8 @@ public class IntListTwoTests {
         System.out.println(lst);
         Assert.assertFalse(lst.isWay());
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6161bdb842a0cb160459a3d8bc6929c1e887a312
