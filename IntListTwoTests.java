@@ -10,13 +10,13 @@ public class IntListTwoTests {
         lst.addToEnd(2);
         lst.addToEnd(3);
 
-        Assert.assertEquals(1, lst._tail.getNum());
-        Assert.assertEquals(3, lst._head.getNum());
-        Assert.assertEquals(2, lst._head.getPrev().getNum());
-        Assert.assertEquals(2, lst._tail.getNext().getNum());
+        Assert.assertEquals(3, lst._tail.getNum());
+        Assert.assertEquals(1, lst._head.getNum());
+        Assert.assertEquals(2, lst._head.getNext().getNum());
+        Assert.assertEquals(2, lst._tail.getPrev().getNum());
 
         lst.addToEnd(4);
-        Assert.assertEquals(4, lst._head.getNum());
+        Assert.assertEquals(4, lst._tail.getNum());
     }
 
     @Test
@@ -30,19 +30,18 @@ public class IntListTwoTests {
 
         Assert.assertEquals(2, lst._head.getNum());
         Assert.assertEquals(2, lst._tail.getNum());
-
     }
 
     @Test
     public void e3_2() {
         IntListTwo lst = new IntListTwo();
-        lst.addToEnd(8);
-        lst.addToEnd(7);
-        lst.addToEnd(9);
-        lst.addToEnd(2);
-        lst.addToEnd(6);
-        lst.addToEnd(4);
         lst.addToEnd(5);
+        lst.addToEnd(4);
+        lst.addToEnd(6);
+        lst.addToEnd(2);
+        lst.addToEnd(9);
+        lst.addToEnd(7);
+        lst.addToEnd(8);
 
         String expected = "{5, 4, 6, 2, 9, 7, 8}";
         Assert.assertEquals(expected, lst.toString());
@@ -68,13 +67,13 @@ public class IntListTwoTests {
     @Test
     public void e3_5() {
         IntListTwo lst = new IntListTwo();
-        lst.addToEnd(8);
-        lst.addToEnd(7);
-        lst.addToEnd(9);
-        lst.addToEnd(2);
-        lst.addToEnd(6);
-        lst.addToEnd(4);
         lst.addToEnd(5);
+        lst.addToEnd(4);
+        lst.addToEnd(6);
+        lst.addToEnd(2);
+        lst.addToEnd(9);
+        lst.addToEnd(7);
+        lst.addToEnd(8);
 
         String expected = "{8, 7, 9, 2, 6, 4, 5}";
         Assert.assertEquals(expected, lst.toStringReverse());
@@ -123,15 +122,15 @@ public class IntListTwoTests {
     @Test
     public void e4_3() {
         IntListTwo lst = new IntListTwo();
-        lst.addToEnd(5);
-        lst.addToEnd(3);
-        lst.addToEnd(4);
         lst.addToEnd(2);
         lst.addToEnd(4);
-        lst.addToEnd(6);
         lst.addToEnd(1);
+        lst.addToEnd(6);
         lst.addToEnd(4);
         lst.addToEnd(2);
+        lst.addToEnd(4);
+        lst.addToEnd(3);
+        lst.addToEnd(5);
 
         System.out.println(lst);
         Assert.assertTrue(lst.isWay());
@@ -166,7 +165,7 @@ public class IntListTwoTests {
         lst.addToEnd(3);
 
         System.out.println(lst);
-        Assert.assertFalse(lst.isWay());
+        Assert.assertTrue(lst.isWay());
     }
 
     @Test
@@ -176,5 +175,79 @@ public class IntListTwoTests {
 
         System.out.println(lst);
         Assert.assertTrue(lst.isWay());
+    }
+
+    @Test
+    public void e4_8() {
+        IntListTwo lst = new IntListTwo();
+        lst.addToEnd(2);
+        lst.addToEnd(1);
+        lst.addToEnd(2);
+        lst.addToEnd(1);
+
+        System.out.println(lst);
+        Assert.assertFalse(lst.isWay());
+    }
+
+    @Test
+    public void e4_9() {
+        IntListTwo lst = new IntListTwo();
+        lst.addToEnd(2);
+        lst.addToEnd(1);
+        lst.addToEnd(1);
+        lst.addToEnd(1);
+
+        System.out.println(lst);
+        Assert.assertTrue(lst.isWay());
+    }
+
+    @Test
+    public void e4_10() {
+        IntListTwo lst = new IntListTwo();
+        lst.addToEnd(2);
+        lst.addToEnd(2);
+        lst.addToEnd(2);
+        lst.addToEnd(2);
+
+        System.out.println(lst);
+        Assert.assertFalse(lst.isWay());
+    }
+
+    @Test
+    public void e4_11() {
+        IntListTwo lst = new IntListTwo();
+        lst.addToEnd(3);
+        lst.addToEnd(2);
+        lst.addToEnd(2);
+        lst.addToEnd(2);
+
+        System.out.println(lst);
+        Assert.assertTrue(lst.isWay());
+    }
+
+    @Test
+    public void e4_12() {
+        IntListTwo lst = new IntListTwo();
+        lst.addToEnd(3);
+        lst.addToEnd(3);
+        lst.addToEnd(3);
+        lst.addToEnd(3);
+        lst.addToEnd(3);
+
+        System.out.println(lst);
+        Assert.assertFalse(lst.isWay());
+    }
+
+    @Test
+    public void e4_13() {
+        IntListTwo lst = new IntListTwo();
+        lst.addToEnd(1);
+        lst.addToEnd(2);
+        lst.addToEnd(2);
+        lst.addToEnd(3);
+        lst.addToEnd(3);
+
+        System.out.println(lst);
+        Assert.assertFalse(lst.isWay());
     }
 }
