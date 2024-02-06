@@ -10,10 +10,16 @@ public class IntListTwoTests {
         lst.addToEnd(2);
         lst.addToEnd(3);
 
-        Assert.assertEquals(3, lst._tail.getNum());
+        // As far as I understand, head is on the right side, tail is on the left
+        // tail is the "end"
+        // next is going right
+        // prev is going left
         Assert.assertEquals(1, lst._head.getNum());
-        Assert.assertEquals(2, lst._head.getPrev().getNum());
-        Assert.assertEquals(2, lst._tail.getNext().getNum());
+        Assert.assertEquals(2, lst._head.getNext().getNum());
+        Assert.assertEquals(2, lst._tail.getPrev().getNum());
+        Assert.assertEquals(3, lst._tail.getNum());
+        Assert.assertNull(lst._head.getPrev());
+        Assert.assertNull(lst._tail.getNext());
 
         lst.addToEnd(4);
         Assert.assertEquals(4, lst._tail.getNum());
@@ -250,8 +256,4 @@ public class IntListTwoTests {
         System.out.println(lst);
         Assert.assertFalse(lst.isWay());
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6161bdb842a0cb160459a3d8bc6929c1e887a312
